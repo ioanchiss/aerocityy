@@ -1,0 +1,66 @@
+<div class="page-wrapper">
+    <app-navbar></app-navbar>
+
+    <div class="row page-conent">
+
+        <div class="col-xl-4 col-lg-6 col-sm-12">
+            <div class="card">
+                <h2>Phase <span>{{ presalePhase }} <app-loader [time]="remainedTimeForPresale"></app-loader>
+                    </span>/4</h2>
+                <div *ngIf="remainedTimeForPresale">
+                    <h3>Time left: {{ days }} {{ hours }} {{ minutes }}</h3>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Desired investment for this phase:</h2>
+                <app-loader [time]="goalPerPresale"></app-loader>
+                <div *ngIf="goalPerPresale">
+                    <h2><span>{{ goalPerPresale }}$</span></h2>
+                    <p> {{ goalPerPresale }} TUT offered at {{ costPerPresale }}$ (potentially {{ goalPerPresale }}$)
+                    </p>
+                </div>
+            </div>
+            <div class="card-1">
+                <p>each phase will have a refund policy (during the phase) where investors can redeem 80% of the tokens
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-xl-4 col-lg-6 col-sm-12">
+            <div class="card">
+                <app-invest-in></app-invest-in>
+            </div>
+            <div class="card">
+                <h2>Total investment for this phase:</h2>
+                <app-loader [time]="balancePerPresale"></app-loader>
+                <div class="row" *ngIf="balancePerPresale">
+                    <div class="col-sm-6">
+                        <h2><span>{{ balancePerPresale }}$</span></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <circle-progress [percent]="investmentProgress" [radius]="100" [outerStrokeWidth]="16"
+                            [innerStrokeWidth]="10" [outerStrokeColor]="'#5DC3CF'" [innerStrokeColor]="'#0A1E3D'"
+                            [animation]="true" [animationDuration]="1000" [showSubtitle]="false" [backgroundPadding]="0"
+                            [renderOnClick]="false">
+                        </circle-progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div appDisconnectContent class="col-xl-4 col-lg-6 col-sm-12">
+            <div class="card">
+                <app-contribution></app-contribution>
+            </div>
+            <div class="card">
+                <app-claim-rewards></app-claim-rewards>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-errors></app-errors>

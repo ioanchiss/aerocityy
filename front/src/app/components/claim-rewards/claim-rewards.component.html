@@ -1,0 +1,9 @@
+<app-loader [time]="totalOwnedToken"></app-loader>
+<div *ngIf="totalOwnedToken">
+    <h2>Tokens: <span>{{ totalOwnedToken }} TUT</span></h2>
+        <div class="row">
+            <div class="col-6">
+                <button [disabled]="claimDisabled" (click)="claimFunds()" class="btn-1">Claim</button>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="page-wrapper">
+    <app-navbar></app-navbar>
+
+    <div class="row page-conent">
+
+        <div class="col-4">
+            <div class="card project">
+                <h2>South Bucharest <span>AeroCity</span></h2>
+                <p>
+                    With our first proof of concept (South Bucharest AeroCity) we provide community the opportunity to
+                    invest in the first AeroCity project, benefit from it (20% profit share) and be part of creating the
+                    world of the future. </p>
+                <app-loader [time]="presalePhase"></app-loader>
+                <div *ngIf="presalePhase">
+                    <h3>Phase: {{ presalePhase }}/4</h3>
+                    <h3>Investment for this phase:<br> {{ balancePerPresale }}$</h3>
+                </div>
+                <button class="btn-1" type="button" [routerLink]="['/invest']">Invest in this project</button>
+            </div>
+        </div>
+
+        <div class="col-8 coming-soon">
+                <h1>More infrastructure projects<br>are <span>coming soon</span></h1>
+        </div>
+
+    </div>
+</div>

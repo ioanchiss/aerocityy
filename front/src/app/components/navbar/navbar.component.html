@@ -1,0 +1,19 @@
+<nav class="row">
+    <div class="col-lg-4 logo">
+        <img src="../../../assets/logo/logo.png" />
+    </div>
+    <div class="col-lg-4 text-center page-nav">
+        <div *ngIf="router.url !== '/projects'" >
+            <a [routerLink]="['/']">Projects</a>
+            <a [routerLink]="['/invest']" [routerLinkActive]="['isActive']">Invest</a>
+            <a [routerLink]="['/about']" [routerLinkActive]="['isActive']">About</a>
+        </div>
+    </div>
+    <div class="row col-lg-4 connect-wallet" appConnectContent>
+        <app-connect-wallet class="float-right"></app-connect-wallet>
+    </div>
+    <div class="row col-lg-4 connect-wallet" appDisconnectContent>
+        <app-disconnect-wallet class="float-right"></app-disconnect-wallet>
+        <app-user-details class="float-right"></app-user-details>
+    </div>
+</nav>

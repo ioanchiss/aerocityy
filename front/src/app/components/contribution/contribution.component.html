@@ -1,0 +1,26 @@
+<h2>Your <span>contribution</span></h2>
+<app-loader [time]="presalePhase"></app-loader>
+<div *ngIf="presalePhase">
+    <ul>
+        <li *ngIf="phase1[2]">
+            <h3>Phase {{ phase1[0] }}: {{ phase1[1] }} $</h3>
+        </li>
+        <li *ngIf="phase2[2]">
+            <h3>Phase {{ phase2[0] }}: {{ phase2[1] }} $</h3>
+        </li>
+        <li *ngIf="phase3[2]">
+            <h3>Phase {{ phase3[0] }}: {{ phase3[1] }} $</h3>
+        </li>
+        <li *ngIf="phase4[2]">
+            <h3>Phase {{ phase4[0] }}: {{ phase4[1] }} $</h3>
+        </li>
+    </ul>
+    <div class="row" *ngIf="phase1 && presalePhase != 0">
+        <div class="col-9">
+            <input id="refundValue" class="refund-value" type="number" placeholder="Ammount of USDT" />
+        </div>
+        <div class="col-3">
+            <button (click)="refund()" class="small-btn">Refund</button>
+        </div>
+    </div>
+</div>

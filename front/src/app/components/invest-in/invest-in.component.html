@@ -1,0 +1,22 @@
+<h2><span>Invest</span> in AeroCity</h2>
+<div appConnectContent>
+    <p>
+        Please connect your wallet to invest and check your contribution
+    </p>
+    <app-connect-wallet></app-connect-wallet>
+</div>
+
+<div appDisconnectContent>
+    <app-loader [time]="costPerPresale"></app-loader>
+    <div *ngIf="costPerPresale" class="invest-form">
+        <input id="investValue" class="invest-value" (keyup)="convertCoins()" type="number" placeholder="Ammount of USDT" />
+        <div class="row">
+            <div class="col-6">
+                <button [disabled]="investDisabled"  (click)="invest()" class="btn-1">Invest</button>
+            </div>
+            <div class="col-6 converted-value">
+                <p *ngIf="valueUSDT" class="float-right">{{ valueCoins }} Coins</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+@import './variables'
+
+//// layout ////
+body
+    background: linear-gradient(90deg, $accent-color-2 0%, $accent-color-1 100%)
+    color: $accent-color-2
+    font-size: 16px
+    font-family: $font-1
+    font-weight: 600
+.container
+    padding: 25px
+    width: 100vw
+    max-height: 100vh
+.page-wrapper
+    height: 100vh
+    padding: 25px 10vh
+    .page-conent
+        padding-top: 2vh
+ul
+    list-style: none
+    padding: 0
+
+//// cards ////
+.card
+    margin-bottom: 25px
+    padding: 40px
+    background-color: #fff
+    border-radius: 25px
+.card-1
+    margin-bottom: 25px
+    padding: 50px
+    background-color: #00000036
+    border-radius: 25px
+    p
+        color: #fff
+
+//// fonts ////
+p
+    font-size: 16px
+    font-weight: 600
+h1
+    font-size: 65px
+    font-weight: 600
+h2
+    font-size: 45px
+    font-weight: 600
+    margin-bottom: 20px
+h3
+    font-size: 25px
+    font-weight: 700
+span
+    color: $accent-color-1
+
+a
+    color: #fff
+    text-decoration: none
+    &:hover
+        color: $accent-color-1
+        text-decoration: none
+
+//// buttons ////  
+button:disabled
+    opacity: 0.4
+    &:hover
+        background-color: $accent-color-1
+
+.btn
+    height: 55px
+    padding: 0 25px
+    border-radius: 30px
+    border: none
+    background-color: $accent-color-2
+    color: #FFF
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+        background-color: #FFF
+.btn-1
+    height: 55px
+    padding: 0 25px
+    border-radius: 30px
+    border: none
+    background-color: $accent-color-1
+    color: #FFF
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+        background-color: $accent-color-2
+.btn-2
+    height: 55px
+    padding: 0 25px
+    border-radius: 30px
+    border: none
+    background-color: #FFF
+    font-weight: 500
+.small-btn
+    height: 40px
+    padding: 0 25px
+    border-radius: 20px
+    border: none
+    background-color: $accent-color-2
+    color: #FFF
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+        background-color: $accent-color-1
+
+//// responsive ////
+@media (max-width: #{1200px})
+    .page-wrapper
+        height: auto
+        padding: 25px 25px
+        .page-conent
+            padding-top: 50px
+
+@media (max-width: #{960px})
+    h2
+        font-size: 35px
+        font-weight: 7 00
